@@ -14,4 +14,9 @@ public class SpringSecurityDemoController {
     public String hello(){
         return "hello from SpringSecurityDemoController";
     }
+
+    @GetMapping("/world")
+    public String world(){
+        return "world from SpringSecurityDemoController";
+    }
 }
