@@ -1,5 +1,7 @@
 package com.example.springsecuritydemo.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,13 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class SpringSecurityDemoController {
-    @GetMapping("/hello")
+    private static final Logger logger = LoggerFactory.getLogger(SpringSecurityDemoController.class);
+
+    @GetMapping("/user/hello")
     public String hello(){
-        return "hello from SpringSecurityDemoController";
+        logger.info("hello from user");
+        return "hello from user!!!";
+
     }
 
-    @GetMapping("/world")
+    @GetMapping("/admin/hello")
     public String world(){
-        return "world from SpringSecurityDemoController";
+        logger.info("hello from admin");
+        return "hello from admin!!!";
     }
 }
